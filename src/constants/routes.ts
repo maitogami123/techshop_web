@@ -1,1 +1,1 @@
-export const routesPath = { main: "/" };
+export const routesPath = { main: '/' };
