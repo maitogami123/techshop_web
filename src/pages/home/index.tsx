@@ -15,12 +15,13 @@ const Home = () => {
     return (
         <>
             <h1>Hello</h1>
-            {data?.map((item) => {
-                <div>
-                    <h2>Welcome, {item?.productLine}!</h2>
-                    <p>Your email is {item?.productName}.</p>
-                </div>;
-            })}
+            {data &&
+                data.data.map((item, index) => (
+                    <div key={index}>
+                        <h2>Dòng sản phẩm: -- {item.productLine} --</h2>
+                        <p>Tên sản phẩm: -- {item.productName} --</p>
+                    </div>
+                ))}
         </>
     );
 };

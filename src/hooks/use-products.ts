@@ -2,7 +2,7 @@ import { ProductItem, productApi } from '@/api';
 import { UseQueryOptions, useQuery } from '@tanstack/react-query';
 
 type ProductsQueryOptions = Omit<
-    UseQueryOptions<ProductItem[]>,
+    UseQueryOptions<{ data: ProductItem[] }>,
     'queryKey' | 'queryFn'
 >;
 

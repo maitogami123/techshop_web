@@ -11,5 +11,6 @@ export type ProductItem = {
 };
 
 export const productApi = {
-    getProduct: (): Promise<ProductItem[]> => axiosClient.get('product/all')
+    getProduct: (): Promise<{ data: ProductItem[] }> =>
+        axiosClient.get('product/all')
 };
