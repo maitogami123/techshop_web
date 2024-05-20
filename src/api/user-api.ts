@@ -1,6 +1,21 @@
 import axiosClient from './axios-client';
 
-export const getUserProfile = async () => {
-    const response = await axiosClient.get('/user');
-    return response.data;
+export type UserInformation = {
+    accountDetail: {
+        city: string;
+        detailedAddress: string;
+        district: string;
+        firstName: string;
+        id: number;
+        lastName: string;
+        default: boolean;
+        phoneNumber: string;
+        email: string;
+    };
+    username: string;
+};
+
+export const userApi = {
+    getProfile: (): Promise<UserInformation> =>
+        axiosClient.get('/userDetail/all')
 };

@@ -1,4 +1,4 @@
-import { useProfile } from '@/hooks/use-profiles';
+import { useProfile } from '@/hooks';
 
 const UserProfile = () => {
     const { data, isLoading, error } = useProfile();
@@ -13,8 +13,8 @@ const UserProfile = () => {
 
     return (
         <div>
-            <h1>Welcome, {data?.name}!</h1>
-            <p>Your email is {data?.email}.</p>
+            <h1>Welcome, {data?.username}!</h1>
+            <p>Your email is {data?.accountDetail.email}.</p>
         </div>
     );
 };
