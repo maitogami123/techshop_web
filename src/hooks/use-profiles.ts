@@ -1,4 +1,5 @@
 import { UserInformation, userApi } from '@/api';
+import { QueryKeys } from '@/constants/query-keys';
 import { UseQueryOptions, useQuery } from '@tanstack/react-query';
 
 type UserProfileQueryOptions = Omit<
@@ -6,10 +7,13 @@ type UserProfileQueryOptions = Omit<
     'queryKey' | 'queryFn'
 >;
 
-export const useProfile = (options?: UserProfileQueryOptions) => {
+export const useProfile = (
+    options?: UserProfileQueryOptions,
+    params?: object
+) => {
     return useQuery({
         ...options,
-        queryKey: ['profile'],
+        queryKey: [QueryKeys.USERS, params],
         queryFn: userApi.getProfile
     });
 };

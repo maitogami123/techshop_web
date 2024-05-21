@@ -11,11 +11,11 @@ const Home = () => {
     if (error) {
         return <div>Error: {error.message}</div>;
     }
-
     return (
         <>
             <h1>Hello</h1>
             {data &&
+                Array.isArray(data.data) &&
                 data.data.map((item, index) => (
                     <div key={index}>
                         <h2>Dòng sản phẩm: -- {item.productLine} --</h2>

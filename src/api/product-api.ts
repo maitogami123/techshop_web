@@ -1,3 +1,4 @@
+import { ResponseCustom } from '@/constants/type';
 import axiosClient from './axios-client';
 
 export type ProductItem = {
@@ -8,9 +9,11 @@ export type ProductItem = {
     price: number;
     thumbnailUri: string;
     stock: number;
+    categoryName: string;
+    brandName: string;
 };
 
 export const productApi = {
-    getProduct: (): Promise<{ data: ProductItem[] }> =>
+    getProduct: (): Promise<ResponseCustom<ProductItem>> =>
         axiosClient.get('product/all')
 };
