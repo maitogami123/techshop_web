@@ -50,6 +50,7 @@ const Button = forwardRef<Ref, ButtonProps>((props, ref) => {
             iconPlacement: rightIcon ? ('right' as const) : ('left' as const)
         };
     }, [isLoading, leftIcon, rightIcon]);
+
     const renderButtonVariant = () => {
         switch (buttonVariant) {
             case 'filled':
@@ -83,7 +84,9 @@ const Button = forwardRef<Ref, ButtonProps>((props, ref) => {
             {icon && iconPlacement === 'right' ? (
                 <span
                     className={`inline-flex shrink-0 self-center ${children && !isLoading && 'ml-2'}`}
-                ></span>
+                >
+                    {icon}
+                </span>
             ) : null}
         </button>
     );

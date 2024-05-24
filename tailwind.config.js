@@ -20,6 +20,34 @@ export default {
                     900: '#233876'
                 }
             },
+            borderColor: {
+                primary: {
+                    DEFAULT: '#1C64F2',
+                    100: '#E1EFFE',
+                    50: '#EBF5FF',
+                    200: '#C3DDFD',
+                    300: '#A4CAFE',
+                    400: '#76A9FA',
+                    500: '#3F83F8',
+                    700: '#1A56DB',
+                    800: '#1E429F',
+                    900: '#233876'
+                }
+            },
+            backgroundColor: {
+                primary: {
+                    DEFAULT: '#1C64F2',
+                    100: '#E1EFFE',
+                    50: '#EBF5FF',
+                    200: '#C3DDFD',
+                    300: '#A4CAFE',
+                    400: '#76A9FA',
+                    500: '#3F83F8',
+                    700: '#1A56DB',
+                    800: '#1E429F',
+                    900: '#233876'
+                }
+            },
             boxShadow: {
                 sm: '0 1px 2px 0 rgb(0 0 0 / 0.05)',
                 DEFAULT:

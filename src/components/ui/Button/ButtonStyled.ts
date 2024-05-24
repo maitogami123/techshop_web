@@ -1,7 +1,8 @@
 import { tv } from 'tailwind-variants';
 
 export const baseButton = tv({
-    base: 'text-gray-900 text-center relative font-semibold whitespace-nowrap align-middle outline-none inline-flex items-center justify-center select-none btn-click',
+    base: /*tw*/ `text-gray-900 text-center relative font-semibold whitespace-nowrap align-middle 
+        outline-none inline-flex items-center justify-center select-none overflow-hidden `,
     variants: {
         size: {
             xs: 'text-xs py-1 px-2',
@@ -75,7 +76,8 @@ export const outlinedButton = tv({
     base: 'ring-1',
     variants: {
         color: {
-            primary: 'text-primary'
+            primary:
+                /*tw*/ "text-primary bg-transparent border-primary after:content-[''] after:absolute after:rotate-[25deg] after:top-[-100%] after:left-[-190%] after:bg-primary after:w-[150%] after:pt-[150%] after:transition-[left] after:duration-300 after:ease-linear after:z-[-1] hover:after:left-[-30%] hover:text-white hover:ring-2"
         }
     }
 });
