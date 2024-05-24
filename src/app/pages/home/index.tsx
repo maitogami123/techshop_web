@@ -1,7 +1,6 @@
 import { useProduct } from '@/hooks';
 
 const Home = () => {
-    // return <p>Hi, I'm gay</p>;
     const { data, isLoading, error } = useProduct();
 
     if (isLoading) {

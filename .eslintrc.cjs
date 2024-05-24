@@ -4,7 +4,8 @@ module.exports = {
     extends: [
         'eslint:recommended',
         'plugin:@typescript-eslint/recommended',
-        'plugin:react-hooks/recommended'
+        'plugin:react-hooks/recommended',
+        'plugin:storybook/recommended'
     ],
     ignorePatterns: ['dist', '.eslintrc.cjs'],
     parser: '@typescript-eslint/parser',
@@ -14,7 +15,7 @@ module.exports = {
             'warn',
             { allowConstantExport: true }
         ],
-
+        '@typescript-eslint/no-explicit-any': 'off',
         'react-hooks/rules-of-hooks': 'error',
         'react-hooks/exhaustive-deps': 'warn',
         'react/prop-types': 0,
@@ -27,8 +28,7 @@ module.exports = {
         'no-multiple-empty-lines': 1,
         'space-before-blocks': ['error', 'always'],
         'object-curly-spacing': [1, 'always'],
-        indent: ['warn', 4],
-        quotes: ['error', 'single'],
+        // quotes: ['error', 'single'],
         'array-bracket-spacing': 1,
         'linebreak-style': 0,
         'no-unexpected-multiline': 'warn',

@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import MainLayout from './ui/layouts/Index';
-import Home from './pages/home';
-import UserProfile from './pages/user/user-profile';
+import Home from './app/pages/home';
+import UserProfile from './app/pages/user/user-profile';
+import MainLayout from './components/layouts/Index';
 
 function App() {
     return (
