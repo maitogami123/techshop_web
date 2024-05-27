@@ -1,4 +1,4 @@
-import { ProductItem, productApi } from '@/api';
+import { ProductItem, productApi } from '@/apis';
 import { QueryKeys } from '@/constants/query-keys';
 import { ResponseCustom } from '@/constants/type';
 import { UseQueryOptions, useQuery } from '@tanstack/react-query';

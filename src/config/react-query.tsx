@@ -1,9 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import {
-    // UseMutationOptions,
-    DefaultOptions,
-    QueryClient
-} from '@tanstack/react-query';
+import { DefaultOptions, QueryClient } from '@tanstack/react-query';
 
 export const queryConfig = {
     queries: {

@@ -1,4 +1,4 @@
-import axiosClient from './axios-client';
+import axiosClient from '../config/axios-client';
 
 export type UserInformation = {
     accountDetail: {
