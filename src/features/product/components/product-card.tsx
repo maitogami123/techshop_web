@@ -22,7 +22,11 @@ const ProductCard: FunctionComponent<ProductCardProps> = () => {
                     <p className="">23.000.000đ</p>
                     <Button
                         buttonVariant="filled"
-                        buttonStyled={{ color: 'filled' }}
+                        buttonStyled={{
+                            color: 'primary',
+                            size: 'xl',
+                            rounded: 'xs'
+                        }}
                     >
                         Add to cart
                     </Button>
