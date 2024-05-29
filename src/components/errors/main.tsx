@@ -1,4 +1,4 @@
-import Button from '../ui/Button/Index';
+import Button from '../ui/button';
 
 export const MainErrorFallBack = () => {
     return (

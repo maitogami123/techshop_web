@@ -51,6 +51,13 @@ export const baseButton = tv({
         },
         behavior: {
             block: 'w-full'
+        },
+        color: {
+            filled: 'text-white bg-blue-600',
+            text: 'text-blue-600',
+            outlined:
+                "text-primary bg-transparent border-primary after:content-[''] after:absolute after:rotate-[25deg] after:top-[-100%] after:left-[-190%] after:bg-primary after:w-[150%] after:pt-[150%] after:transition-[left] after:duration-300 after:ease-linear after:z-[-1] hover:after:left-[-30%] hover:text-white hover:ring-2",
+            ghost: ''
         }
     }
 });
@@ -58,30 +65,25 @@ export const baseButton = tv({
 export const filledButton = tv({
     extend: baseButton,
     variants: {
-        color: {
-            primary: 'text-white bg-blue-600'
-        }
+        color: 'filled'
     }
 });
 export const textButton = tv({
     extend: baseButton,
     variants: {
-        color: {
-            primary: 'text-blue-600'
-        }
+        color: 'text'
     }
 });
 export const outlinedButton = tv({
     extend: baseButton,
     base: 'ring-1',
     variants: {
-        color: {
-            primary:
-                /*tw*/ "text-primary bg-transparent border-primary after:content-[''] after:absolute after:rotate-[25deg] after:top-[-100%] after:left-[-190%] after:bg-primary after:w-[150%] after:pt-[150%] after:transition-[left] after:duration-300 after:ease-linear after:z-[-1] hover:after:left-[-30%] hover:text-white hover:ring-2"
-        }
+        color: 'outlined'
     }
 });
 export const ghostButton = tv({
     extend: baseButton,
-    variants: {}
+    variants: {
+        color: 'ghost'
+    }
 });

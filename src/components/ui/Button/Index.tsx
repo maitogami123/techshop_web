@@ -4,9 +4,9 @@ import { TbLoader } from 'react-icons/tb';
 import {
     filledButton,
     outlinedButton,
-    textButton,
-    ghostButton
-} from './ButtonStyled';
+    ghostButton,
+    textButton
+} from './button-styled';
 type BaseButtonAttributes = React.ComponentPropsWithoutRef<'button'>;
 type Ref = HTMLButtonElement;
 
