@@ -19,7 +19,7 @@ function App() {
                         <Route
                             path="product-card"
                             element={
-                                <div className="flex  gap-3">
+                                <div className="grid grid-cols-4 gap-4 max-md:grid-cols-2 max-sm:grid-cols-1">
                                     <ProductCard
                                         id={''}
                                         title={''}

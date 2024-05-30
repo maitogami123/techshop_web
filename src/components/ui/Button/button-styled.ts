@@ -28,6 +28,12 @@ export const baseButton = tv({
             md: 'my-4',
             lg: 'my-6'
         },
+        hPadding: {
+            xs: 'px-[4px]',
+            sm: 'px-[8px]',
+            md: 'px-[12px]',
+            lg: 'px-[16px]'
+        },
         HSpace: {
             xs: 'mx-1',
             sm: 'mx-2',
@@ -51,7 +57,8 @@ export const baseButton = tv({
         },
         behavior: {
             block: 'w-full'
-        }
+        },
+        responsiveVariants: ['xs', 'sm', 'md']
     }
 });
 
