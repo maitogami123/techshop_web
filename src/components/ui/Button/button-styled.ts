@@ -2,7 +2,8 @@ import { tv } from 'tailwind-variants';
 
 export const baseButton = tv({
     base: /*tw*/ `text-gray-900 text-center relative font-semibold whitespace-nowrap align-middle 
-        outline-none inline-flex items-center justify-center select-none overflow-hidden `,
+        outline-none inline-flex items-center justify-center select-none overflow-hidden hover:-translate-y-px active:shadow-md
+        active:translate-y-0 hover:shadow-none transition-all `,
     variants: {
         size: {
             xs: 'text-xs py-1 px-2',

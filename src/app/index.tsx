@@ -8,7 +8,7 @@ import { createRouter } from './routes';
 const AppRouter = () => {
     const queryClient = useQueryClient();
 
-    const router = useMemo(() => createRouter(queryClient), [queryClient]);
+    const router = useMemo(() => createRouter(/*queryClient*/), [queryClient]);
 
     return <RouterProvider router={router} />;
 };
