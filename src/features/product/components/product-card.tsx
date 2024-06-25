@@ -1,5 +1,6 @@
 import Button from '@/components/ui/button';
 import { FunctionComponent } from 'react';
+import { Link } from 'react-router-dom';
 
 interface ProductCardProps {
     id: string;
@@ -10,7 +11,11 @@ interface ProductCardProps {
 
 const ProductCard: FunctionComponent<ProductCardProps> = () => {
     return (
-        <div className="rounded-lg shadow-lg overflow-hidden h-fit">
+        <Link
+            to={'test' + Math.random().toString()}
+            key={'test' + Math.random().toString()}
+            className="rounded-lg shadow-lg overflow-hidden h-fit"
+        >
             <div className="w-full h-1/2">
                 <img
                     className="w-full h-full"
@@ -39,7 +44,7 @@ const ProductCard: FunctionComponent<ProductCardProps> = () => {
                     </Button>
                 </div>
             </div>
-        </div>
+        </Link>
     );
 };
 

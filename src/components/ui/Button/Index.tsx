@@ -1,10 +1,9 @@
-import React, { forwardRef, useMemo } from 'react';
+import React, { forwardRef } from 'react';
 import { VariantProps } from 'tailwind-variants';
-import { TbLoader } from 'react-icons/tb';
 import {
     filledButton,
-    outlinedButton,
     ghostButton,
+    outlinedButton,
     textButton
 } from './button-styled';
 type BaseButtonAttributes = React.ComponentPropsWithoutRef<'button'>;
@@ -33,23 +32,11 @@ const Button = forwardRef<Ref, ButtonProps>((props, ref) => {
         buttonVariant = 'filled',
         disable,
         isLoading,
-        leftIcon,
-        rightIcon,
         className,
         title,
         onClick,
         ...rest
     } = props;
-    const { newIcon: icon, iconPlacement } = useMemo(() => {
-        let newIcon = rightIcon || leftIcon;
-        if (isLoading) {
-            newIcon = <TbLoader className="animate-spin" size={25} />;
-        }
-        return {
-            newIcon,
-            iconPlacement: rightIcon ? ('right' as const) : ('left' as const)
-        };
-    }, [isLoading, leftIcon, rightIcon]);
 
     const renderButtonVariant = () => {
         switch (buttonVariant) {
@@ -73,21 +60,7 @@ const Button = forwardRef<Ref, ButtonProps>((props, ref) => {
             disabled={disable || isLoading}
             title={title}
         >
-            {icon && iconPlacement === 'left' ? (
-                <span
-                    className={`inline-flex shrink-0 self-center ${children && !isLoading && 'mr-2'}`}
-                >
-                    {icon}
-                </span>
-            ) : null}
             {!isLoading && children}
-            {icon && iconPlacement === 'right' ? (
-                <span
-                    className={`inline-flex shrink-0 self-center ${children && !isLoading && 'ml-2'}`}
-                >
-                    {icon}
-                </span>
-            ) : null}
         </button>
     );
 });

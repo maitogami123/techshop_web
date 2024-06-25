@@ -18,24 +18,28 @@ export const baseButton = tv({
             square_xl: 'text-xl h-12 w-12 p-1'
         },
         vPadding: {
+            none: 'py-0',
             xs: 'py-[4px]',
             sm: 'py-[8px]',
             md: 'py-[12px]',
             lg: 'py-[16px]'
         },
         vSpace: {
+            none: 'my-0',
             xs: 'my-1',
             sm: 'my-2',
             md: 'my-4',
             lg: 'my-6'
         },
         hPadding: {
+            none: 'px-0',
             xs: 'px-[4px]',
             sm: 'px-[8px]',
             md: 'px-[12px]',
             lg: 'px-[16px]'
         },
         HSpace: {
+            none: 'mx-0',
             xs: 'mx-1',
             sm: 'mx-2',
             md: 'mx-4',

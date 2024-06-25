@@ -11,7 +11,7 @@ const MainLayout: FunctionComponent<MainLayoutProps> = () => {
         <>
             <Head />
             <MainHeader />
-            <div className="container mx-auto">
+            <div className="container mx-auto my-10">
                 <Outlet />
             </div>
             <Footer />

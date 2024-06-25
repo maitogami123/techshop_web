@@ -5,7 +5,7 @@ interface ProductRowProps {}
 
 const ProductRow: FunctionComponent<ProductRowProps> = () => {
     return (
-        <div className="container grid grid-cols-4 gap-2">
+        <div className="container grid grid-cols-4 gap-4">
             <ProductCard id={''} title={''} price={0} imageUrl={''} />
             <ProductCard id={''} title={''} price={0} imageUrl={''} />
             <ProductCard id={''} title={''} price={0} imageUrl={''} />
