@@ -3,6 +3,11 @@ export default {
     content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
     theme: {
         extend: {
+            maxWidth: {
+                '1/2': '50%',
+                '1/4': '25%',
+                '1/3': '33.33333%'
+            },
             fontFamily: {
                 inter: ['Inter', 'san-serif']
             },

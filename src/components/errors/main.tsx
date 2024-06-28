@@ -1,6 +1,6 @@
-import Button from '../ui/Button/Index';
+import Button from '../ui/button';
 
-export const MainErrorFallBack = () => {
+export const MainErrorFallback = () => {
     return (
         <div
             className="flex h-screen w-screen flex-col items-center justify-center text-red-500"

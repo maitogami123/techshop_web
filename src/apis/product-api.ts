@@ -1,5 +1,5 @@
 import { ResponseCustom } from '@/constants/type';
-import axiosClient from '../config/axios-client';
+import axiosClient from '../lib/axios-client';
 
 export type ProductItem = {
     id: number;

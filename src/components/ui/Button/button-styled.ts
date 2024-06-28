@@ -2,7 +2,8 @@ import { tv } from 'tailwind-variants';
 
 export const baseButton = tv({
     base: /*tw*/ `text-gray-900 text-center relative font-semibold whitespace-nowrap align-middle 
-        outline-none inline-flex items-center justify-center select-none overflow-hidden `,
+        outline-none inline-flex items-center justify-center select-none overflow-hidden hover:-translate-y-px active:shadow-md
+        active:translate-y-0 hover:shadow-none transition-all `,
     variants: {
         size: {
             xs: 'text-xs py-1 px-2',
@@ -17,18 +18,28 @@ export const baseButton = tv({
             square_xl: 'text-xl h-12 w-12 p-1'
         },
         vPadding: {
+            none: 'py-0',
             xs: 'py-[4px]',
             sm: 'py-[8px]',
             md: 'py-[12px]',
             lg: 'py-[16px]'
         },
         vSpace: {
+            none: 'my-0',
             xs: 'my-1',
             sm: 'my-2',
             md: 'my-4',
             lg: 'my-6'
         },
+        hPadding: {
+            none: 'px-0',
+            xs: 'px-[4px]',
+            sm: 'px-[8px]',
+            md: 'px-[12px]',
+            lg: 'px-[16px]'
+        },
         HSpace: {
+            none: 'mx-0',
             xs: 'mx-1',
             sm: 'mx-2',
             md: 'mx-4',
@@ -51,37 +62,41 @@ export const baseButton = tv({
         },
         behavior: {
             block: 'w-full'
-        }
+        },
+        responsiveVariants: ['xs', 'sm', 'md']
     }
 });
 
+// TODO: Need refactor
+// https://www.tailwind-variants.org/docs/variants#adding-variants
 export const filledButton = tv({
     extend: baseButton,
     variants: {
         color: {
-            primary: 'text-white bg-blue-600'
+            primary: 'text-white bg-blue-600',
+            secondary: 'text-gray-900 bg-gray-200'
         }
     }
 });
 export const textButton = tv({
     extend: baseButton,
     variants: {
-        color: {
-            primary: 'text-blue-600'
-        }
+        color: { primary: 'text-blue-600' }
     }
 });
 export const outlinedButton = tv({
     extend: baseButton,
     base: 'ring-1',
     variants: {
-        color: {
-            primary:
-                /*tw*/ "text-primary bg-transparent border-primary after:content-[''] after:absolute after:rotate-[25deg] after:top-[-100%] after:left-[-190%] after:bg-primary after:w-[150%] after:pt-[150%] after:transition-[left] after:duration-300 after:ease-linear after:z-[-1] hover:after:left-[-30%] hover:text-white hover:ring-2"
-        }
+        color: { primary: 'outlined' }
     }
 });
 export const ghostButton = tv({
     extend: baseButton,
-    variants: {}
+    variants: {
+        color: {
+            primary:
+                "text-primary bg-transparent border-primary after:content-[''] after:absolute after:rotate-[25deg] after:top-[-100%] after:left-[-190%] after:bg-primary after:w-[150%] after:pt-[150%] after:transition-[left] after:duration-300 after:ease-linear after:z-[-1] hover:after:left-[-30%] hover:text-white hover:ring-2"
+        }
+    }
 });
