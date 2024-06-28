@@ -67,10 +67,15 @@ export const baseButton = tv({
     }
 });
 
+// TODO: Need refactor
+// https://www.tailwind-variants.org/docs/variants#adding-variants
 export const filledButton = tv({
     extend: baseButton,
     variants: {
-        color: { primary: 'text-white bg-blue-600' }
+        color: {
+            primary: 'text-white bg-blue-600',
+            secondary: 'text-gray-900 bg-gray-200'
+        }
     }
 });
 export const textButton = tv({

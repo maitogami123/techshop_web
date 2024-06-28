@@ -24,8 +24,8 @@ const ProductCard: FunctionComponent<ProductCardProps> = () => {
                 />
             </div>
             <div className="p-4 block h-auto">
-                <h3 className="lg:text-lg font-bold pb-4 max-md:pb-2 max-md:text-sm">
-                    MSI GF65 Thin 10UE
+                <h3 className="lg:text-lg font-bold h-14 mb-4 max-md:pb-2 max-md:text-sm text-ellipsis line-clamp-2">
+                    Lorem ipsum dolor sit,
                 </h3>
                 <div className="flex justify-between content-center max-xl:flex-wrap max-md:gap-3">
                     <p className="text-md font-bold max-md:text-sm ">
@@ -38,6 +38,9 @@ const ProductCard: FunctionComponent<ProductCardProps> = () => {
                             hPadding: 'lg',
                             size: 'md',
                             rounded: 'sm'
+                        }}
+                        onClick={(e) => {
+                            e.preventDefault();
                         }}
                     >
                         Add to cart

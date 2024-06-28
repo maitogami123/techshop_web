@@ -26,13 +26,17 @@ const Carousel: FunctionComponent<CarouselProps> = ({
     }, []);
 
     return (
-        <div className="overflow-hidden relative rounded-lg">
+        <div className="overflow-hidden relative max-h-96 rounded-lg">
             <div
                 className="flex transition-transform ease-out duration-500"
                 style={{ transform: `translateX(-${curr * 100}%)` }}
             >
                 {slides.map((img) => (
-                    <img src={img} alt="" />
+                    <img
+                        src={img}
+                        alt=""
+                        className="object-stretch object-center"
+                    />
                 ))}
             </div>
             <div className="absolute inset-0 flex items-center justify-between p-4">

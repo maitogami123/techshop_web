@@ -5,17 +5,20 @@ import {
     TbBrandLinkedin
 } from 'react-icons/tb';
 import Button from '../button';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
         <footer className="border-t-2 border-solid border-gray-200 bg-white">
             <div className="container mx-auto py-8 grid grid-cols-12 ">
                 <div className="col-span-3 flex flex-col gap-8">
-                    <img
-                        src="/assets/svg/logo.svg"
-                        alt="Techshop's Logo"
-                        className="pb-2 size-1/2"
-                    />
+                    <Link to={'/'}>
+                        <img
+                            src="/assets/svg/logo.svg"
+                            alt="Techshop's Logo"
+                            className="pb-2"
+                        />
+                    </Link>
 
                     <p className="">
                         Lorem ipsum dolor sit amet consectetur, adipisicing
@@ -34,6 +37,7 @@ const Footer = () => {
                                 vPadding: 'sm',
                                 rounded: 'full'
                             }}
+                            className="hover:animate-pulse"
                         >
                             <TbBrandFacebook size={24} />
                         </Button>
@@ -46,6 +50,7 @@ const Footer = () => {
                                 vPadding: 'sm',
                                 rounded: 'full'
                             }}
+                            className="hover:animate-pulse"
                         >
                             <TbBrandInstagram size={24} />
                         </Button>
@@ -58,6 +63,7 @@ const Footer = () => {
                                 vPadding: 'sm',
                                 rounded: 'full'
                             }}
+                            className="hover:animate-pulse"
                         >
                             <TbBrandLinkedin size={24} />
                         </Button>
@@ -70,6 +76,7 @@ const Footer = () => {
                                 vPadding: 'sm',
                                 rounded: 'full'
                             }}
+                            className="hover:animate-pulse"
                         >
                             <TbBrandGithub size={24} />
                         </Button>

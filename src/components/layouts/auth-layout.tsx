@@ -1,16 +1,16 @@
 import { FunctionComponent } from 'react';
-import { Head } from '../seo';
-import MainHeader from '../ui/header/main-header';
 import { Outlet } from 'react-router-dom';
+import { Head } from '../seo';
 import Footer from '../ui/footer/footer';
+import MainHeader from '../ui/header/main-header';
 
-interface MainLayoutProps {}
+interface AuthLayoutProps {}
 
-const MainLayout: FunctionComponent<MainLayoutProps> = () => {
+const AuthLayout: FunctionComponent<AuthLayoutProps> = () => {
     return (
         <>
             <Head />
-            <MainHeader showAuthBtns showSearchBar />
+            <MainHeader />
             <div className="container mx-auto my-10">
                 <Outlet />
             </div>
@@ -19,4 +19,4 @@ const MainLayout: FunctionComponent<MainLayoutProps> = () => {
     );
 };
 
-export default MainLayout;
+export default AuthLayout;
