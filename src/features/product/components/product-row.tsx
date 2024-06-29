@@ -13,7 +13,8 @@ const ProductRow: FunctionComponent<ProductRowProps> = (props) => {
                 return (
                     <ProductCard
                         id={product.id}
-                        title={product.productName}
+                        productLine={product.productLine}
+                        name={product.productName}
                         price={product.price}
                         imageUrl={
                             'http://127.0.0.1:8080/product/get-file?filePath=' +

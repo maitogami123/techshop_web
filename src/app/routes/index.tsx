@@ -7,7 +7,7 @@ import Register from './auth/register';
 import AuthRoot from './auth/root';
 import { NotFoundRoute } from './not-found';
 
-export const createRouter = (/* queryClient: QueryClient */) =>
+export const createRouter = (/*queryClient: QueryClient*/) =>
     createBrowserRouter([
         {
             path: '/',
@@ -18,7 +18,7 @@ export const createRouter = (/* queryClient: QueryClient */) =>
                     element: <AppIndex />
                 },
                 {
-                    path: '/:prodId',
+                    path: '/:productLine',
                     element: <ProductDetails />
                 }
             ]
