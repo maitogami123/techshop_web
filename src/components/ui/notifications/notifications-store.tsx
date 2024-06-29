@@ -1,5 +1,5 @@
-import { observable, action } from 'mobx';
 import { nanoid } from 'nanoid';
+import { create } from 'zustand';
 
 export type Notification = {
     id: string;
@@ -7,19 +7,26 @@ export type Notification = {
     title: string;
     message?: string;
 };
-export class NotificationStore {
-    @observable
-    notifications: Notification[] = [];
 
-    @action
-    addNotification(notification: Omit<Notification, 'id'>) {
-        this.notifications.push({ id: nanoid(), ...notification });
-    }
+type NotificationsStore = {
+    notifications: Notification[];
+    addNotification: (notification: Omit<Notification, 'id'>) => void;
+    dismissNotification: (id: string) => void;
+};
 
-    @action
-    dismissNotification(id: string) {
-        this.notifications = this.notifications.filter(
-            (notification) => notification.id !== id
-        );
-    }
-}
+export const useNotifications = create<NotificationsStore>((set) => ({
+    notifications: [],
+    addNotification: (notification) =>
+        set((state) => ({
+            notifications: [
+                ...state.notifications,
+                { id: nanoid(), ...notification }
+            ]
+        })),
+    dismissNotification: (id) =>
+        set((state) => ({
+            notifications: state.notifications.filter(
+                (notification) => notification.id !== id
+            )
+        }))
+}));

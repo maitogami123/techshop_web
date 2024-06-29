@@ -1,9 +1,9 @@
 import { Notification } from './notification';
-import { NotificationStore } from './notifications-store';
+import { useNotifications } from './notifications-store';
 
 export const Notifications = () => {
-    const store = new NotificationStore();
-    const { notifications, dismissNotification } = store;
+    const { notifications, dismissNotification } = useNotifications();
+
     return (
         <div
             aria-live="assertive"
@@ -13,7 +13,7 @@ export const Notifications = () => {
                 <Notification
                     key={notification.id}
                     notification={notification}
-                    onDismiss={() => dismissNotification(notification.id)}
+                    onDismiss={dismissNotification}
                 />
             ))}
         </div>

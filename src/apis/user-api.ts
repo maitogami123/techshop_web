@@ -1,4 +1,4 @@
-import axiosClient from '../lib/axios-client';
+import { api } from '@/lib/axios-client';
 
 export type UserInformation = {
     accountDetail: {
@@ -16,6 +16,5 @@ export type UserInformation = {
 };
 
 export const userApi = {
-    getProfile: (): Promise<UserInformation> =>
-        axiosClient.get('/userDetail/all')
+    getProfile: (): Promise<UserInformation> => api.get('/userDetail/all')
 };
