@@ -1,15 +1,13 @@
 import { createBrowserRouter } from 'react-router-dom';
-import AppRoot from './app/root';
-import ProductRow from '@/features/product/components/product-row';
-import { NotFoundRoute } from './not-found';
-import Hero from '@/components/ui/hero';
+import AppIndex from './app';
 import ProductDetails from './app/product/product-details';
-import Section from '@/components/ui/sections';
-import AuthRoot from './auth/root';
+import AppRoot from './app/root';
 import Login from './auth/login';
 import Register from './auth/register';
+import AuthRoot from './auth/root';
+import { NotFoundRoute } from './not-found';
 
-export const createRouter = (/* queryClient: QueryClient */) =>
+export const createRouter = (/*queryClient: QueryClient*/) =>
     createBrowserRouter([
         {
             path: '/',
@@ -17,17 +15,10 @@ export const createRouter = (/* queryClient: QueryClient */) =>
             children: [
                 {
                     path: '',
-                    element: (
-                        <div className="">
-                            <Hero />
-                            <Section heading="New Products">
-                                <ProductRow />
-                            </Section>
-                        </div>
-                    )
+                    element: <AppIndex />
                 },
                 {
-                    path: '/:prodId',
+                    path: '/:productLine',
                     element: <ProductDetails />
                 }
             ]

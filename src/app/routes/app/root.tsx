@@ -3,6 +3,7 @@ import { FunctionComponent, Suspense } from 'react';
 import { ErrorBoundary } from 'react-error-boundary';
 import { TbLoader } from 'react-icons/tb';
 import { Outlet, useLocation } from 'react-router-dom';
+import { NotFoundRoute } from '../not-found';
 
 const AppRoot: FunctionComponent = () => {
     const location = useLocation();
@@ -17,7 +18,7 @@ const AppRoot: FunctionComponent = () => {
             >
                 <ErrorBoundary
                     key={location.pathname}
-                    fallback={<div>Something went wrong!</div>}
+                    fallback={<NotFoundRoute />}
                 >
                     <Outlet />
                 </ErrorBoundary>

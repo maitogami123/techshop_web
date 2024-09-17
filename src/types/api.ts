@@ -13,3 +13,15 @@ export type User = Entity<{
     email: string;
     role: 'ADMIN' | 'USER';
 }>;
+
+export type Product = {
+    id: number;
+    productName: string;
+    productLine: string;
+    discount: number;
+    price: number;
+    thumbnailUri: string;
+    stock: number;
+    categoryName: string;
+    brandName: string;
+};

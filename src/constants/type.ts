@@ -1,7 +1,7 @@
-type DataResponseType<Type> = Type | Array<Type>;
+type DataResponseType<T> = T | Array<T>;
 
-export type ResponseCustom<Type> = {
-    data: DataResponseType<Type>;
+export type ResponseCustom<T> = {
+    data: DataResponseType<T>;
     statusText: string;
     status: number;
 };

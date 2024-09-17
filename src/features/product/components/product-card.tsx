@@ -1,35 +1,37 @@
 import Button from '@/components/ui/button';
+import { formatPrice } from '@/utils/format';
 import { FunctionComponent } from 'react';
 import { Link } from 'react-router-dom';
 
 interface ProductCardProps {
-    id: string;
-    title: string;
+    id: number;
+    productLine: string;
+    name: string;
     price: number;
     imageUrl: string;
 }
 
-const ProductCard: FunctionComponent<ProductCardProps> = () => {
+const ProductCard: FunctionComponent<ProductCardProps> = (props) => {
     return (
         <Link
-            to={'test' + Math.random().toString()}
-            key={'test' + Math.random().toString()}
+            to={props.productLine}
+            key={props.id}
             className="rounded-lg shadow-lg overflow-hidden h-fit"
         >
-            <div className="w-full h-1/2">
+            <div className="w-full h-48">
                 <img
-                    className="w-full h-full"
-                    src="https://th.bing.com/th/id/OIP.H1a6Tc9FIQrP7ktPbRCtDwHaFj?rs=1&pid=ImgDetMain"
+                    className="w-full h-full object-cover"
+                    src={props.imageUrl}
                     alt=""
                 />
             </div>
             <div className="p-4 block h-auto">
                 <h3 className="lg:text-lg font-bold h-14 mb-4 max-md:pb-2 max-md:text-sm text-ellipsis line-clamp-2">
-                    Lorem ipsum dolor sit,
+                    {props.name}
                 </h3>
                 <div className="flex justify-between content-center max-xl:flex-wrap max-md:gap-3">
                     <p className="text-md font-bold max-md:text-sm ">
-                        23.000.000đ
+                        {formatPrice(props.price)}
                     </p>
                     <Button
                         buttonVariant="filled"
